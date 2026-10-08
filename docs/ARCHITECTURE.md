@@ -197,7 +197,31 @@ Attempting an invalid transition returns HTTP 409 with a message identifying the
 
 ---
 
-## Current Deployment (Docker)
+## Current Deployment (Vercel + Supabase)
+
+The live deployment runs the React SPA on **Vercel** (serverless) with **Supabase** as the managed PostgreSQL database.
+
+**Live URL:** https://claims-portal-chalo1996s-projects.vercel.app
+
+**Environment variables required in Vercel:**
+
+| Variable | Description |
+|---|---|
+| `DB_HOST` | Supabase pooler host (`aws-0-<region>.pooler.supabase.com`) |
+| `DB_PORT` | `6543` (Transaction pooler) |
+| `DB_NAME` | `postgres` |
+| `DB_USER` | `postgres.<project-ref>` |
+| `DB_PASSWORD` | Supabase DB password |
+| `POSTGRES_URL` | Full pooler URI (password must be percent-encoded) |
+| `JWT_SECRET` | Long random secret |
+| `JWT_EXPIRES_IN` | `8h` |
+| `NODE_ENV` | `production` |
+
+**Database setup (first time):** Run the migration + seed SQL in Supabase SQL Editor. All enum casts must be explicit (e.g. `'Motor'::claim_type`) due to Supabase's strict type checking.
+
+---
+
+## Docker Deployment (local / self-hosted)
 
 ```bash
 # Copy environment file and set required values

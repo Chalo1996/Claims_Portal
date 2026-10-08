@@ -4,7 +4,7 @@
 
 A full-stack insurance claims management system. Claims officers can submit, review, approve, reject, and mark claims as paid through an enforced status workflow.
 
-**Live demo:** [https://claims-portal.vercel.app](https://claims-portal.vercel.app/login)  
+**Live demo:** [https://claims-portal-chalo1996s-projects.vercel.app](https://claims-portal-chalo1996s-projects.vercel.app/login)  
 **Docker Hub:** [chaloemmanuel/claims-backend](https://hub.docker.com/r/chaloemmanuel/claims-backend) · [chaloemmanuel/claims-frontend](https://hub.docker.com/r/chaloemmanuel/claims-frontend)  
 **Architecture:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) · [docs/aws-architecture.svg](docs/aws-architecture.svg)
 
@@ -30,8 +30,8 @@ A full-stack insurance claims management system. Claims officers can submit, rev
 **Requirements:** Node.js 20+, PostgreSQL 16
 
 ```bash
-git clone https://github.com/Chalo1996/claims-portal.git
-cd claims-portal
+git clone https://github.com/Chalo1996/Claims_Portal.git
+cd Claims_Portal
 
 # Backend
 cp backend/.env.example backend/.env
@@ -84,11 +84,12 @@ Copy `.env.example` to `.env` (root for Docker, `backend/.env` for local dev).
 
 | Variable | Default | Description |
 |---|---|---|
-| `DB_HOST` | `localhost` | PostgreSQL host |
-| `DB_PORT` | `5432` | PostgreSQL port |
-| `DB_NAME` | `claims_portal` | Database name |
-| `DB_USER` | `postgres` | Database user |
+| `DB_HOST` | — | Supabase pooler host (e.g. `aws-0-eu-west-1.pooler.supabase.com`) |
+| `DB_PORT` | `6543` | Supabase pooler port (Transaction mode) |
+| `DB_NAME` | `postgres` | Database name |
+| `DB_USER` | — | Supabase pooler user (e.g. `postgres.<project-ref>`) |
 | `DB_PASSWORD` | — | **Required.** Never commit. |
+| `POSTGRES_URL` | — | Full pooler URI (takes precedence); encode `@` as `%40` in password |
 | `PORT` | `5000` | Backend port |
 | `NODE_ENV` | `development` | `development` or `production` |
 | `JWT_SECRET` | — | **Required.** Long random string. |
@@ -99,6 +100,17 @@ Copy `.env.example` to `.env` (root for Docker, `backend/.env` for local dev).
 ---
 
 ## Database Setup
+
+This project uses **Supabase** (hosted PostgreSQL) as its database.
+
+**For production / Vercel deployment:**
+
+1. Create a project at [supabase.com](https://supabase.com)
+2. Go to **Project Settings → Database → Connection pooling** and grab the Transaction pooler URI (port `6543`)
+3. Run the migration + seed SQL in **SQL Editor → New query** (see [`docs/migrate-seed.sql`](docs/migrate-seed.sql) or the README artifact)
+4. Set the env vars in Vercel (DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, POSTGRES_URL)
+
+**For local development (PostgreSQL):**
 
 ```bash
 # Create database
@@ -226,9 +238,9 @@ The frontend is configured for Vercel in `frontend/vercel.json`. The SPA rewrite
 **Option 1 — GitHub integration (recommended):**
 
 1. Go to [vercel.com/new](https://vercel.com/new)
-2. Import `Chalo1996/claims-portal`
+2. Import `Chalo1996/Claims_Portal`
 3. Set **Root Directory** to `frontend`
-4. Add environment variable: `VITE_API_URL` → your backend URL (e.g. `https://your-api.onrender.com/api`)
+4. Add environment variables (DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, POSTGRES_URL, JWT_SECRET, NODE_ENV=production)
 5. Deploy
 
 **Option 2 — CLI:**
