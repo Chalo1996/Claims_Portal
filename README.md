@@ -1,6 +1,6 @@
 # Insurance Claims Processing Portal
 
-[![CI](https://github.com/Chalo1996/claims-portal/actions/workflows/ci.yml/badge.svg)](https://github.com/Chalo1996/claims-portal/actions/workflows/ci.yml)
+[![CI](https://github.com/Chalo1996/Claims_Portal/actions/workflows/ci.yml/badge.svg)](https://github.com/Chalo1996/Claims_Portal/actions/workflows/ci.yml)
 
 A full-stack insurance claims management system. Claims officers can submit, review, approve, reject, and mark claims as paid through an enforced status workflow.
 
