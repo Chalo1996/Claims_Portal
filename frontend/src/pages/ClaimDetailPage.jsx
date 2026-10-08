@@ -83,7 +83,7 @@ export default function ClaimDetailPage() {
       {toast && (
         <div
           role="status"
-          className="fixed top-4 right-4 z-50 bg-jubilee-600 text-white text-sm font-medium px-4 py-3
+          className="fixed top-4 right-4 z-50 bg-brand-600 text-white text-sm font-medium px-4 py-3
                      rounded-lg shadow-lg flex items-center gap-2 animate-fade-in"
         >
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
@@ -114,8 +114,8 @@ export default function ClaimDetailPage() {
         {canUpdate && (
           <button
             onClick={() => setShowModal(true)}
-            className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-jubilee-600 text-white text-sm font-medium
-                       rounded-md hover:bg-jubilee-700 focus:outline-none focus:ring-2 focus:ring-danube-500 whitespace-nowrap w-full sm:w-auto"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-brand-600 text-white text-sm font-medium
+                       rounded-md hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-danube-500 whitespace-nowrap w-full sm:w-auto"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -158,7 +158,7 @@ export default function ClaimDetailPage() {
             <dl className="space-y-2">
               <div>
                 <dt className="text-xs text-gray-500 uppercase tracking-wide">Policy Number</dt>
-                <dd className="text-sm font-medium text-jubilee-700">{claim.policy_number}</dd>
+                <dd className="text-sm font-medium text-brand-700">{claim.policy_number}</dd>
               </div>
               <div>
                 <dt className="text-xs text-gray-500 uppercase tracking-wide">Customer</dt>
@@ -195,14 +195,14 @@ export default function ClaimDetailPage() {
               return (
                 <div key={step} className="flex items-center gap-3 mb-2 last:mb-0">
                   <div className={`h-6 w-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${
-                    isCurrent  ? 'bg-jubilee-600 text-white' :
+                    isCurrent  ? 'bg-brand-600 text-white' :
                     isPast     ? 'bg-green-500 text-white' :
                     isRejected && stepIdx > currentIdx ? 'bg-gray-200 text-gray-400' :
                     'bg-gray-200 text-gray-400'
                   }`}>
                     {isPast ? '✓' : idx + 1}
                   </div>
-                   <span className={`text-sm ${isCurrent ? 'font-semibold text-jubilee-700' : isPast ? 'text-green-700' : 'text-gray-400'}`}>
+                   <span className={`text-sm ${isCurrent ? 'font-semibold text-brand-700' : isPast ? 'text-green-700' : 'text-gray-400'}`}>
                     {step.replace('_', ' ')}
                   </span>
                 </div>

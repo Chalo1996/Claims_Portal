@@ -29,7 +29,7 @@
 
 ## System Overview
 
-The Jubilee Claims Processing Portal is a multi-tier web application with three logical layers:
+The Claims Processing Portal is a multi-tier web application with three logical layers:
 
 ```
 React SPA (Vite + Tailwind)
@@ -177,8 +177,8 @@ The login flow:
 
 **Test credentials:**
 ```
-Email:    officer@jubilee.co.ke
-Password: Claims@2026
+Email:    officer@claimsportal.co.ke
+Password: Officer@2026
 ```
 
 ---

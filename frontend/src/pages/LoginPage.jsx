@@ -39,12 +39,12 @@ export default function LoginPage() {
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4">
       <div className="w-full max-w-sm space-y-6">
         <div className="text-center">
-          <div className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-jubilee-800 mb-4">
+          <div className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-brand-800 mb-4">
             <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900">Jubilee Claims Portal</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Claims Portal</h1>
           <p className="text-sm text-gray-500 mt-1">Sign in to manage claims</p>
         </div>
 
@@ -94,8 +94,8 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-jubilee-700
-                       text-white text-sm font-semibold rounded-md hover:bg-jubilee-800
+            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-brand-700
+                       text-white text-sm font-semibold rounded-md hover:bg-brand-800
                        disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-danube-500"
           >
             {loading && <Spinner size="sm" />}
@@ -104,7 +104,7 @@ export default function LoginPage() {
         </form>
 
         <p className="text-center text-xs text-gray-400">
-          Demo: <span className="font-mono">officer@jubilee.co.ke</span> / <span className="font-mono">Claims@2026</span>
+          Demo: <span className="font-mono">officer@claimsportal.co.ke</span> / <span className="font-mono">Officer@2026</span>
         </p>
       </div>
     </div>

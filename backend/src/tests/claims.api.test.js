@@ -12,7 +12,7 @@ const app     = require('../app');
 const pool    = require('../db/pool');
 
 const AUTH_TOKEN = jwt.sign(
-  { sub: 'user-1', email: 'officer@jubilee.co.ke', name: 'Claims Officer' },
+  { sub: 'user-1', email: 'officer@claimsportal.co.ke', name: 'Claims Officer' },
   'test-secret',
   { expiresIn: '1h' }
 );

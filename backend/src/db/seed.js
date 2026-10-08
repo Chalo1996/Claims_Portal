@@ -3,9 +3,9 @@ const bcrypt = require('bcryptjs');
 const pool = require('./pool');
 
 const TEST_USER = {
-  email:     'officer@jubilee.co.ke',
+  email:     'officer@claimsportal.co.ke',
   full_name: 'Claims Officer',
-  password:  'Claims@2026',
+  password:  'Officer@2026',
 };
 
 const policies = [

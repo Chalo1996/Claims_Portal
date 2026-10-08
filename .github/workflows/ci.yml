@@ -71,11 +71,11 @@ jobs:
         with:
           context: ./backend
           push: false
-          tags: jubilee-claims-backend:ci
+          tags: claims-backend:ci
 
       - name: Build frontend image
         uses: docker/build-push-action@v5
         with:
           context: ./frontend
           push: false
-          tags: jubilee-claims-frontend:ci
+          tags: claims-frontend:ci

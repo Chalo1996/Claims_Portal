@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
-/* ── Jubilee Insurance brand theme ───────────────────────────────
-   Official Jubilee Insurance (jubileeinsurance.com/ke) visual identity:
+/* ── Claims Portal brand theme ───────────────────────────────────
+   Visual identity:
      • Shiraz (red)    #BA0C2F — primary branding, CTAs, nav, focal points
      • Danube (blue)   #70A1D1 — secondary accents, supportive UI (focus rings)
      • Antique Bronze  #664D03 — subtle/earthy accents
      • Neutral white/grey — backgrounds and structured content            */
 @theme {
   /* Shiraz — primary red */
-  --color-jubilee-50:  #fbeaee;
-  --color-jubilee-100: #f4cdd6;
-  --color-jubilee-200: #e8a3b3;
-  --color-jubilee-300: #d96f88;
-  --color-jubilee-400: #c93a59;
-  --color-jubilee-500: #c2183c;
-  --color-jubilee-600: #ba0c2f;
-  --color-jubilee-700: #9c0a28;
-  --color-jubilee-800: #7e0820;
-  --color-jubilee-900: #5e0618;
-  --color-jubilee-950: #3d0410;
+  --color-brand-50:  #fbeaee;
+  --color-brand-100: #f4cdd6;
+  --color-brand-200: #e8a3b3;
+  --color-brand-300: #d96f88;
+  --color-brand-400: #c93a59;
+  --color-brand-500: #c2183c;
+  --color-brand-600: #ba0c2f;
+  --color-brand-700: #9c0a28;
+  --color-brand-800: #7e0820;
+  --color-brand-900: #5e0618;
+  --color-brand-950: #3d0410;
 
   /* Danube — secondary soft blue */
   --color-danube-50:  #eef5fb;

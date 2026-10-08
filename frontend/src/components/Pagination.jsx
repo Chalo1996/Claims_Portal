@@ -38,7 +38,7 @@ export default function Pagination({ pagination, onPageChange }) {
                 onClick={() => onPageChange(p)}
                 className={`px-3 py-1.5 text-sm rounded-md border ${
                   p === page
-                     ? 'bg-jubilee-600 text-white border-jubilee-600'
+                     ? 'bg-brand-600 text-white border-brand-600'
                     : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
                 }`}
                 aria-current={p === page ? 'page' : undefined}

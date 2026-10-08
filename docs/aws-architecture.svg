@@ -16,7 +16,7 @@
   <rect width="1200" height="860" fill="#f8fafc" rx="8"/>
 
   <!-- Title -->
-  <text x="600" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Jubilee Claims Portal — AWS Production Architecture</text>
+  <text x="600" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Claims Portal — AWS Production Architecture</text>
   <text x="600" y="58" text-anchor="middle" font-size="12" fill="#64748b">High Availability · Auto-scaling · Multi-AZ · Least Privilege</text>
 
   <!-- ═══════════════════════════════════════════ -->

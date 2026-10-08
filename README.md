@@ -1,11 +1,11 @@
 # Insurance Claims Processing Portal
 
-[![CI](https://github.com/Chalo1996/jubilee-claims-portal/actions/workflows/ci.yml/badge.svg)](https://github.com/Chalo1996/jubilee-claims-portal/actions/workflows/ci.yml)
+[![CI](https://github.com/Chalo1996/claims-portal/actions/workflows/ci.yml/badge.svg)](https://github.com/Chalo1996/claims-portal/actions/workflows/ci.yml)
 
 A full-stack insurance claims management system. Claims officers can submit, review, approve, reject, and mark claims as paid through an enforced status workflow.
 
-**Live demo:** [https://jubilee-claims-portal-v2.vercel.app](https://jubilee-claims-portal-v2.vercel.app/login)  
-**Docker Hub:** [chaloemmanuel/jubilee-claims-backend](https://hub.docker.com/r/chaloemmanuel/jubilee-claims-backend) · [chaloemmanuel/jubilee-claims-frontend](https://hub.docker.com/r/chaloemmanuel/jubilee-claims-frontend)  
+**Live demo:** [https://claims-portal.vercel.app](https://claims-portal.vercel.app/login)  
+**Docker Hub:** [chaloemmanuel/claims-backend](https://hub.docker.com/r/chaloemmanuel/claims-backend) · [chaloemmanuel/claims-frontend](https://hub.docker.com/r/chaloemmanuel/claims-frontend)  
 **Architecture:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) · [docs/aws-architecture.svg](docs/aws-architecture.svg)
 
 ---
@@ -30,8 +30,8 @@ A full-stack insurance claims management system. Claims officers can submit, rev
 **Requirements:** Node.js 20+, PostgreSQL 16
 
 ```bash
-git clone https://github.com/Chalo1996/jubilee-claims-portal.git
-cd jubilee-claims-portal
+git clone https://github.com/Chalo1996/claims-portal.git
+cd claims-portal
 
 # Backend
 cp backend/.env.example backend/.env
@@ -53,8 +53,8 @@ npm run dev
 
 **Test credentials:**
 ```
-Email:    officer@jubilee.co.ke
-Password: Claims@2026
+Email:    officer@claimsportal.co.ke
+Password: Officer@2026
 ```
 
 ---
@@ -137,7 +137,7 @@ All claims/policies endpoints require `Authorization: Bearer <token>`.
 
 **Login request:**
 ```json
-{ "email": "officer@jubilee.co.ke", "password": "Claims@2026" }
+{ "email": "officer@claimsportal.co.ke", "password": "Officer@2026" }
 ```
 
 ### Claims
@@ -226,7 +226,7 @@ The frontend is configured for Vercel in `frontend/vercel.json`. The SPA rewrite
 **Option 1 — GitHub integration (recommended):**
 
 1. Go to [vercel.com/new](https://vercel.com/new)
-2. Import `Chalo1996/jubilee-claims-portal`
+2. Import `Chalo1996/claims-portal`
 3. Set **Root Directory** to `frontend`
 4. Add environment variable: `VITE_API_URL` → your backend URL (e.g. `https://your-api.onrender.com/api`)
 5. Deploy
@@ -240,11 +240,11 @@ npx vercel --prod
 ```
 
 **Backend hosting options for the API** (Vercel only serves static/serverless):
-- [Render](https://render.com) — free tier, Docker deploy from Docker Hub image `chaloemmanuel/jubilee-claims-backend:latest`
+- [Render](https://render.com) — free tier, Docker deploy from Docker Hub image `chaloemmanuel/claims-backend:latest`
 - [Railway](https://railway.app) — PostgreSQL + Node.js in one project
 - [Fly.io](https://fly.io) — excellent Docker support, free allowance
 
-For Render: create a Web Service → select "Deploy from Docker Hub" → image `chaloemmanuel/jubilee-claims-backend:latest` → add environment variables.
+For Render: create a Web Service → select "Deploy from Docker Hub" → image `chaloemmanuel/claims-backend:latest` → add environment variables.
 
 ---
 
@@ -252,23 +252,23 @@ For Render: create a Web Service → select "Deploy from Docker Hub" → image `
 
 ```bash
 # Pull and run backend
-docker pull chaloemmanuel/jubilee-claims-backend:latest
+docker pull chaloemmanuel/claims-backend:latest
 docker run -p 5000:5000 \
   -e DB_HOST=host.docker.internal \
   -e DB_NAME=claims_portal \
   -e DB_USER=postgres \
   -e DB_PASSWORD=your_password \
   -e JWT_SECRET=your_secret \
-  chaloemmanuel/jubilee-claims-backend:latest
+  chaloemmanuel/claims-backend:latest
 
 # Pull frontend (nginx, proxies /api to backend)
-docker pull chaloemmanuel/jubilee-claims-frontend:latest
+docker pull chaloemmanuel/claims-frontend:latest
 ```
 
 | Image | Tags | Size |
 |---|---|---|
-| `chaloemmanuel/jubilee-claims-backend` | `latest`, `1.0.0` | ~58 MB |
-| `chaloemmanuel/jubilee-claims-frontend` | `latest`, `1.0.0` | ~21 MB |
+| `chaloemmanuel/claims-backend` | `latest`, `1.0.0` | ~58 MB |
+| `chaloemmanuel/claims-frontend` | `latest`, `1.0.0` | ~21 MB |
 
 ---
 

@@ -263,7 +263,7 @@ export default function CreateClaimPage() {
             type="submit"
             disabled={submitting}
             className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium
-                       text-white bg-jubilee-600 rounded-md hover:bg-jubilee-700 disabled:opacity-50
+                       text-white bg-brand-600 rounded-md hover:bg-brand-700 disabled:opacity-50
                        focus:outline-none focus:ring-2 focus:ring-danube-500"
           >
             {submitting && <Spinner size="sm" />}
